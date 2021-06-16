@@ -14,6 +14,6 @@ class Base64EncodedAudio implements AudioInterface
     public function createRecognitionAudio(string $audioFile): RecognitionAudio
     {
         return (new RecognitionAudio())
-            ->setContent($audioFile);
+            ->setContent(base64_decode($audioFile));
     }
 }
